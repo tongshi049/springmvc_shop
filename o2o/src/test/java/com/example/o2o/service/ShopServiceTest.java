@@ -1,6 +1,7 @@
 package com.example.o2o.service;
 
 import com.example.o2o.BaseTest;
+import com.example.o2o.dto.ImageHolder;
 import com.example.o2o.dto.ShopExecution;
 import com.example.o2o.entity.Area;
 import com.example.o2o.entity.PersonInfo;
@@ -48,7 +49,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setShopName("new name");
         File shopImg = new File("C:\\codes\\img\\namei.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.modifyShop(shop, is, "namei.jpg");
+        ImageHolder imageHolder = new ImageHolder("namei.jpg", is);
+        ShopExecution shopExecution = shopService.modifyShop(shop, imageHolder);
         System.out.println(shopExecution.getShop().getShopImg());
     }
 
@@ -74,7 +76,8 @@ public class ShopServiceTest extends BaseTest {
         shop.setAdvice("under review");
         File shopImg = new File("C:\\codes\\img\\namei.jpg");
         InputStream is = new FileInputStream(shopImg);
-        ShopExecution shopExecution = shopService.addShop(shop, is, shopImg.getName());
+        ImageHolder imageHolder = new ImageHolder(shopImg.getName(), is);
+        ShopExecution shopExecution = shopService.addShop(shop, imageHolder);
         assertEquals(ShopStateEnum.CHECK.getState(), shopExecution.getState());
     }
 }

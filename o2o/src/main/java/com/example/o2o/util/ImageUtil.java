@@ -1,5 +1,6 @@
 package com.example.o2o.util;
 
+import com.example.o2o.dto.ImageHolder;
 import jdk.internal.util.xml.impl.Input;
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
@@ -48,16 +49,16 @@ public class ImageUtil {
      * @param targetAddr
      * @return
      */
-    public static String generateThumbnail(InputStream thumbnailInputStream, String fileName, String targetAddr) {
+    public static String generateThumbnail(ImageHolder thumbnail, String targetAddr) {
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(fileName);
+        String extension = getFileExtension(thumbnail.getImageName());
         makeDirPath(targetAddr);
         String relativeAddr = targetAddr + realFileName + extension;
         logger.debug("current relativeAddr is: " + relativeAddr);
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         logger.debug("current completeAddr is: " + PathUtil.getImgBasePath() + relativeAddr);
         try {
-            Thumbnails.of(thumbnailInputStream).size(200, 200)
+            Thumbnails.of(thumbnail.getImage()).size(200, 200)
                     .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "\\watermark.jpg")), 0.25f)
                     .toFile(PathUtil.getImgBasePath() + relativeAddr);
         } catch (IOException e) {

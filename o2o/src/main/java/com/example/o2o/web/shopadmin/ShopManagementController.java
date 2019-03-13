@@ -1,5 +1,6 @@
 package com.example.o2o.web.shopadmin;
 
+import com.example.o2o.dto.ImageHolder;
 import com.example.o2o.dto.ShopExecution;
 import com.example.o2o.entity.*;
 import com.example.o2o.enums.ShopStateEnum;
@@ -143,9 +144,10 @@ public class ShopManagementController {
             ShopExecution se = null;
             try {
                 if (shopImg == null) {
-                    se = shopService.modifyShop(shop, null, null);
+                    se = shopService.modifyShop(shop, null);
                 }
-                se = shopService.modifyShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
+                se = shopService.addShop(shop, imageHolder);
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
                     modelMap.put("success", true);
                 } else {
@@ -246,7 +248,8 @@ public class ShopManagementController {
             shop.setOwner(owner);
             ShopExecution se = null;
             try {
-                se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                ImageHolder imageHolder = new ImageHolder(shopImg.getOriginalFilename(), shopImg.getInputStream());
+                se = shopService.addShop(shop, imageHolder);
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     // list consisting of shops that current user can operate
