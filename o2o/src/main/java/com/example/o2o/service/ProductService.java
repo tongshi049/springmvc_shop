@@ -12,4 +12,10 @@ public interface ProductService {
 
     ProductExecution addProduct(Product product, ImageHolder thumbnail, List<ImageHolder> productImgList)
             throws ProductOperationException;
+
+    Product getProductById(long productId);
+
+    ProductExecution modifyProduct(Product product, ImageHolder thumbnail, List<ImageHolder> productImages)
+        throws ProductOperationException;
+
 }

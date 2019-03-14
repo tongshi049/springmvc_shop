@@ -75,7 +75,6 @@ public class ProductDaoTest extends BaseTest {
 	}
 
 	@Test
-	@Ignore
 	public void testBQueryProductList() throws Exception {
 		Product productCondition = new Product();
 		// 分页查询，预期返回三条结果
@@ -93,7 +92,6 @@ public class ProductDaoTest extends BaseTest {
 	}
 
 	@Test
-	@Ignore
 	public void testCQueryProductByProductId() throws Exception {
 		long productId = 1;
 		// 初始化两个商品详情图实例作为productId为1的商品下的详情图片
@@ -123,7 +121,6 @@ public class ProductDaoTest extends BaseTest {
 	}
 
 	@Test
-	@Ignore
 	public void testDUpdateProduct() throws Exception {
 		Product product = new Product();
 		ProductCategory pc = new ProductCategory();
@@ -148,7 +145,6 @@ public class ProductDaoTest extends BaseTest {
 	}
 
 	@Test
-	@Ignore
 	public void testFDeleteShopAuthMap() throws Exception {
 		// 清除掉insert方法添加的商品
 		Product productCondition = new Product();

@@ -99,4 +99,60 @@ public class ProductServiceImpl implements ProductService {
             }
         }
     }
+
+
+    @Override
+    public Product getProductById(long productId) {
+        return productDao.queryProductById(productId);
+    }
+
+    @Override
+    @Transactional
+    /**
+     * 1. if it has thumbnail, then dealing with thumbnail
+     *    if existing thumbnail, first deleting it then adding new image,
+     *    get relative directory of thumbnail give it to product
+     * 2. deal with product image list
+     * 3. clear logs in tb_product_img
+     * 4. update tb_product_img, tb_product info
+     */
+    public ProductExecution modifyProduct(Product product, ImageHolder thumbnail,
+           List<ImageHolder> productImgHolderList) throws ProductOperationException {
+        if (product != null && product.getShop() != null && product.getShop().getShopId() != null) {
+            // set default attributes of product
+            product.setLastEditTime(new Date());
+            // if thumbnail is not empty, then delete original thumbnail
+            if (thumbnail != null) {
+                // get original info at first
+                Product tempProduct = productDao.queryProductById(product.getProductId());
+                if (tempProduct.getImgAddr() != null) {
+                    ImageUtil.deleteFileOrPath(tempProduct.getImgAddr());
+                }
+                addThumbnail(product, thumbnail);
+            }
+            if (productImgHolderList != null && productImgHolderList.size() > 0) {
+                deleteProductImgList(product.getProductId());
+                addProductImgList(product, productImgHolderList);
+            }
+            try {
+                int effectedNum = productDao.updateProduct(product);
+                if (effectedNum <= 0) {
+                    throw new ProductOperationException("update product info failed");
+                }
+                return new ProductExecution(ProductStateEnum.SUCCESS, product);
+            } catch (Exception e) {
+                throw new ProductOperationException("update product info: " + e.toString());
+            }
+        } else {
+            return new ProductExecution(ProductStateEnum.EMPTY);
+        }
+    }
+
+    private void deleteProductImgList(long productId) {
+        List<ProductImg> productImgList = productImgDao.queryProductImgList(productId);
+        for (ProductImg productImg: productImgList) {
+            ImageUtil.deleteFileOrPath(productImg.getImgAddr());
+        }
+        productImgDao.deleteProductImgByProductId(productId);
+    }
 }

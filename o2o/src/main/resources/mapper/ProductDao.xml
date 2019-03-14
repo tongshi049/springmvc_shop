@@ -14,7 +14,7 @@
         <result column="create_time" property="createTime" />
         <result column="last_edit_time" property="lastEditTime" />
         <result column="enable_status" property="enableStatus" />
-        <result column="point" property="point" />
+       <!-- <result column="point" property="point" />-->
         <association property="productCategory" column="product_category_id"
                      javaType="com.example.o2o.entity.ProductCategory">
             <id column="product_category_id" property="productCategoryId" />
@@ -39,12 +39,7 @@
     <select id="queryProductList" resultType="com.example.o2o.entity.Product">
         SELECT
         product_id, product_name, product_desc, img_addr, normal_price, promotion_price,
-        priority, create_time,
-        last_edit_time,
-        enable_status,
-        point,
-        product_category_id,
-        shop_id
+        priority, create_time, last_edit_time, enable_status, product_category_id, shop_id
         FROM
         tb_product
         <where>
@@ -102,7 +97,6 @@
         p.create_time,
         p.last_edit_time,
         p.enable_status,
-        p.point,
         p.product_category_id,
         p.shop_id,
         pm.product_img_id,
