@@ -44,7 +44,7 @@
         tb_product
         <where>
             <if test="productCondition.shop!=null and productCondition.shop.shopId!=null">
-                and shop_id = #{productCondition.shop.shopId}
+                AND shop_id = #{productCondition.shop.shopId}
             </if>
             <if test="productCondition.productCategory!=null
             and productCondition.productCategory.productCategoryId!=null">
@@ -54,14 +54,13 @@
             <!-- 写like语句的时候 一般都会写成 like '% %' 在mybatis里面写就是应该是 like '%${name} %' 而不是
                 '%#{name} %' ${name} 是不带单引号的，而#{name} 是带单引号的 -->
             <if test="productCondition.productName!=null">
-                and product_name like '%${productCondition.productName}%'
+                AND product_name LIKE '%${productCondition.productName}%'
             </if>
             <if test="productCondition.enableStatus!=null">
-                and enable_status = #{productCondition.enableStatus}
+                AND enable_status = #{productCondition.enableStatus}
             </if>
         </where>
-        ORDER BY
-        priority DESC
+        ORDER BY priority DESC
         LIMIT #{rowIndex},#{pageSize};
     </select>
 
@@ -69,7 +68,7 @@
         SELECT count(1) FROM tb_product
         <where>
             <if test="productCondition.shop!=null and productCondition.shop.shopId!=null">
-                and shop_id = #{productCondition.shop.shopId}
+                AND shop_id = #{productCondition.shop.shopId}
             </if>
             <if test="productCondition.productCategory!=null
 				 and productCondition.productCategory.productCategoryId!=null">
@@ -77,10 +76,10 @@
                 #{productCondition.productCategory.productCategoryId}
             </if>
             <if test="productCondition.productName!=null">
-                and product_name like '%${productCondition.productName}%'
+                AND product_name LIKE '%${productCondition.productName}%'
             </if>
             <if test="productCondition.enableStatus!=null">
-                and enable_status = #{productCondition.enableStatus}
+                AND enable_status = #{productCondition.enableStatus}
             </if>
         </where>
     </select>

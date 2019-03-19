@@ -82,7 +82,7 @@ public class ProductDaoTest extends BaseTest {
 		assertEquals(3, productList.size());
 		// 查询名称为测试的商品总数
 		int count = productDao.queryProductCount(productCondition);
-		assertEquals(5, count);
+		assertEquals(53, count);
 		// 使用商品名称模糊查询，预期返回两条结果
 		productCondition.setProductName("测试");
 		productList = productDao.queryProductList(productCondition, 0, 3);
