@@ -1,5 +1,7 @@
 package com.example.o2o.util;
 
+import com.example.o2o.entity.HeadLine;
+
 public class PathUtil {
 
     /*to make file path separation java code platform independent
@@ -24,4 +26,11 @@ public class PathUtil {
 
         return imagePath.replace("/", separator);
     }
+
+    public static String getHeadLineImagePath(String relativeImgPath){
+        String basePath = PathUtil.getImgBasePath();
+        String relativePath = relativeImgPath.substring(1).replace("/",separator);
+        return basePath +relativePath;
+    }
+
 }
