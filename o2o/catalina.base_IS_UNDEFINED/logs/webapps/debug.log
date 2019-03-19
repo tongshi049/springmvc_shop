@@ -10,3 +10,6 @@
 2019-03-18 14:40:41.430 [main] DEBUG com.example.o2o.dao.ProductDao.queryProductCount-==>  Preparing: SELECT count(1) FROM tb_product 
 2019-03-18 14:40:41.430 [main] DEBUG com.example.o2o.dao.ProductDao.queryProductCount-==> Parameters: 
 2019-03-18 14:40:41.431 [main] DEBUG com.example.o2o.dao.ProductDao.queryProductCount-<==      Total: 1
+2019-03-18 18:32:50.273 [main] DEBUG c.e.o2o.dao.ProductDao.updateProductCategoryToNull-==>  Preparing: UPDATE tb_product SET product_category_id = null WHERE product_category_id = ? 
+2019-03-18 18:32:50.350 [main] DEBUG c.e.o2o.dao.ProductDao.updateProductCategoryToNull-==> Parameters: 4(Long)
+2019-03-18 18:32:50.361 [main] DEBUG c.e.o2o.dao.ProductDao.updateProductCategoryToNull-<==    Updates: 5

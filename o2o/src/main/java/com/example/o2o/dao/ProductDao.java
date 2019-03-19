@@ -64,4 +64,6 @@ public interface ProductDao {
 	 * @return
 	 */
 	int deleteProduct(@Param("productId") long productId, @Param("shopId") long shopId);
+
+
 }

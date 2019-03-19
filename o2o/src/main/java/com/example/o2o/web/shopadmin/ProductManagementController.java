@@ -222,7 +222,7 @@ public class ProductManagementController {
 
         } else {
             modelMap.put("success", false);
-            modelMap.put("errMsg", "请输入商品信息");
+            modelMap.put("errMsg", "Please input product info.");
         }
         return modelMap;
     }
