@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.o2o.service.ShopServiceTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 2, Time elapsed: 0.001 s <<< FAILURE! - in com.example.o2o.service.ShopServiceTest
+testQueryShopListAndCount(com.example.o2o.service.ShopServiceTest)  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException
+	at com.example.o2o.service.ShopServiceTest.testQueryShopListAndCount(ShopServiceTest.java:39)
+

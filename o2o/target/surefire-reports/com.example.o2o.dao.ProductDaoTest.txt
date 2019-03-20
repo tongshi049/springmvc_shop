@@ -1,0 +1,33 @@
+-------------------------------------------------------------------------------
+Test set: com.example.o2o.dao.ProductDaoTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 4, Errors: 1, Skipped: 0, Time elapsed: 0.102 s <<< FAILURE! - in com.example.o2o.dao.ProductDaoTest
+testBQueryProductList(com.example.o2o.dao.ProductDaoTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<53> but was:<32>
+	at com.example.o2o.dao.ProductDaoTest.testBQueryProductList(ProductDaoTest.java:85)
+
+testCQueryProductByProductId(com.example.o2o.dao.ProductDaoTest)  Time elapsed: 0.014 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<8>
+	at com.example.o2o.dao.ProductDaoTest.testCQueryProductByProductId(ProductDaoTest.java:117)
+
+testDUpdateProduct(com.example.o2o.dao.ProductDaoTest)  Time elapsed: 0.008 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at com.example.o2o.dao.ProductDaoTest.testDUpdateProduct(ProductDaoTest.java:137)
+
+testEUpdateProductCategoryToNull(com.example.o2o.dao.ProductDaoTest)  Time elapsed: 0.006 s  <<< FAILURE!
+java.lang.AssertionError: expected:<5> but was:<0>
+	at com.example.o2o.dao.ProductDaoTest.testEUpdateProductCategoryToNull(ProductDaoTest.java:144)
+
+testFDeleteShopAuthMap(com.example.o2o.dao.ProductDaoTest)  Time elapsed: 0.07 s  <<< ERROR!
+org.springframework.dao.DataIntegrityViolationException: 
+
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`o2o`.`tb_product_img`, CONSTRAINT `fk_proimg_product` FOREIGN KEY (`product_id`) REFERENCES `tb_product` (`product_id`))
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: DELETE FROM tb_product   WHERE product_id = ?   AND shop_id=?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`o2o`.`tb_product_img`, CONSTRAINT `fk_proimg_product` FOREIGN KEY (`product_id`) REFERENCES `tb_product` (`product_id`))
+; SQL []; Cannot delete or update a parent row: a foreign key constraint fails (`o2o`.`tb_product_img`, CONSTRAINT `fk_proimg_product` FOREIGN KEY (`product_id`) REFERENCES `tb_product` (`product_id`)); nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`o2o`.`tb_product_img`, CONSTRAINT `fk_proimg_product` FOREIGN KEY (`product_id`) REFERENCES `tb_product` (`product_id`))
+	at com.example.o2o.dao.ProductDaoTest.testFDeleteShopAuthMap(ProductDaoTest.java:159)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`o2o`.`tb_product_img`, CONSTRAINT `fk_proimg_product` FOREIGN KEY (`product_id`) REFERENCES `tb_product` (`product_id`))
+	at com.example.o2o.dao.ProductDaoTest.testFDeleteShopAuthMap(ProductDaoTest.java:159)
+

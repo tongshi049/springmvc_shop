@@ -1,7 +1,7 @@
 package com.example.o2o.util;
 
 import com.example.o2o.dto.ImageHolder;
-import jdk.internal.util.xml.impl.Input;
+
 import net.coobird.thumbnailator.Thumbnails;
 import net.coobird.thumbnailator.geometry.Positions;
 import org.slf4j.Logger;
@@ -16,7 +16,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-import static sun.plugin2.os.windows.OSVERSIONINFOA.size;
 
 public class ImageUtil {
 

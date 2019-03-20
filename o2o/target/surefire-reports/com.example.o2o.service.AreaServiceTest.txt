@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.example.o2o.service.AreaServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0 s <<< FAILURE! - in com.example.o2o.service.AreaServiceTest
+testGetAreaList(com.example.o2o.service.AreaServiceTest)  Time elapsed: 0 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<[BC]> but was:<[西苑]>
+	at com.example.o2o.service.AreaServiceTest.testGetAreaList(AreaServiceTest.java:20)
+

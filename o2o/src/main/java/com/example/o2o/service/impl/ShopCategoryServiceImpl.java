@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ShopCategoryImpl implements ShopCategoryService {
+public class ShopCategoryServiceImpl implements ShopCategoryService {
 
     @Autowired
     private ShopCategoryDao shopCategoryDao;
 
     @Override
-    public List<ShopCategory> getShopCategory(ShopCategory shopCategoryCondition) {
+    public List<ShopCategory> getShopCategoryList(ShopCategory shopCategoryCondition) {
         return shopCategoryDao.queryShopCategory(shopCategoryCondition);
     }
 }

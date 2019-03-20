@@ -31,7 +31,7 @@ public class MainPageController {
         Map<String,Object> modelMap = new HashMap<>();
         List<ShopCategory> shopCategoryList = new ArrayList<>();
         try{
-            shopCategoryList = shopCategoryService.getShopCategory(null);
+            shopCategoryList = shopCategoryService.getShopCategoryList(null);
             modelMap.put("shopCategoryList",shopCategoryList);
         }catch (Exception e){
             modelMap.put("success",false);
@@ -45,10 +45,10 @@ public class MainPageController {
 
             headLineList = headLineService.getHeadLineList(headLineCondition);
             // iterate all headline and set their absolute path
-            for(HeadLine headLine: headLineList){
+            /*for(HeadLine headLine: headLineList){
                 String relativeImgPath = headLine.getLineImg();
                 headLine.setLineImg(PathUtil.getHeadLineImagePath(relativeImgPath));
-            }
+            }*/
             modelMap.put("headLineList",headLineList);
         }catch (Exception e){
             modelMap.put("success",false);

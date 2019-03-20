@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.example.o2o.dao.ProductImgDaoTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.007 s <<< FAILURE! - in com.example.o2o.dao.ProductImgDaoTest
+testBQueryProductImgList(com.example.o2o.dao.ProductImgDaoTest)  Time elapsed: 0.002 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<10>
+	at com.example.o2o.dao.ProductImgDaoTest.testBQueryProductImgList(ProductImgDaoTest.java:46)
+
+testCDeleteProductImgByProductId(com.example.o2o.dao.ProductImgDaoTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: expected:<2> but was:<10>
+	at com.example.o2o.dao.ProductImgDaoTest.testCDeleteProductImgByProductId(ProductImgDaoTest.java:54)
+
