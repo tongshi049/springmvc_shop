@@ -8,13 +8,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/frontend")
 public class FrontendController {
 
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
-    private String index(){
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
+    private String index() {
         return "frontend/index";
     }
 
-    @RequestMapping(value = "/shoplist",method = RequestMethod.GET)
-    private String showShopList(){
+    @RequestMapping(value = "/shoplist", method = RequestMethod.GET)
+    private String showShopList() {
         return "frontend/shoplist";
     }
+
+    @RequestMapping(value = "/shopdetail", method = RequestMethod.GET)
+    private String showShopDetail() {
+        return "frontend/shopdetail";
+    }
+
+    @RequestMapping(value="/productdetail",method = RequestMethod.GET)
+    private String showProductDetail(){
+        return "frontend/productdetail";
+    }
+
 }
