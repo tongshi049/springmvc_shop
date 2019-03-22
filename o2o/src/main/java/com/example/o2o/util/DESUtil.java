@@ -84,8 +84,7 @@ public class DESUtil {
     }
 
     public static void main(String[] args){
-        System.out.println(getEncryptString("root"));
-        System.out.println(getEncryptString("root"));
-        System.out.println(getDecryptString("Ov4j7fKiCzY="));
+        /*System.out.println(getEncryptString("root"));
+        System.out.println(getEncryptString("root"));*/
     }
 }
