@@ -6,5 +6,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface HeadLineService {
+    public static final String HEADLINEKEY = "headlineList";
     List<HeadLine> getHeadLineList(HeadLine headLineCondition) throws IOException;
 }

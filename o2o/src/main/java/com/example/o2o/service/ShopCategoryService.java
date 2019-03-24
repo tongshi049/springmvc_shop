@@ -5,6 +5,9 @@ import com.example.o2o.entity.ShopCategory;
 import java.util.List;
 
 public interface ShopCategoryService {
+
+    public static final String SCLISTKEY = "shopcategorylist";
+
     /**
      *  get the shop category list by shop category condition
      * @param shopCategoryCondition

@@ -2,7 +2,7 @@ package com.example.o2o.entity;
 
 import java.util.Date;
 
-public class localAuth {
+public class LocalAuth {
 
     private Long localAuthId;
     private String username;
