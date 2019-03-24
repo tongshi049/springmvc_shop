@@ -13,3 +13,22 @@
 2019-03-23 17:28:21.983 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
 2019-03-23 17:28:22.019 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
 2019-03-23 17:28:22.038 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-03-23 20:23:00.317 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==>  Preparing: INSERT INTO tb_local_auth(username,password,user_id,create_time,last_edit_time) VALUES (?,?,?,?,?) 
+2019-03-23 20:23:00.399 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==> Parameters: testusername(String), testpassword(String), 1(Long), 2019-03-23 20:22:59.913(Timestamp), null
+2019-03-23 20:23:00.417 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-<==    Updates: 1
+2019-03-23 20:32:31.947 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.username = ? AND l.password = ? 
+2019-03-23 20:32:31.993 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==> Parameters: testusername(String), testpassword(String)
+2019-03-23 20:32:32.012 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-<==      Total: 1
+2019-03-23 20:34:16.720 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.username = ? AND l.password = ? 
+2019-03-23 20:34:16.781 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==> Parameters: testusername(String), testpassword(String)
+2019-03-23 20:34:16.796 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-<==      Total: 1
+2019-03-23 20:34:56.498 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.username = ? AND l.password = ? 
+2019-03-23 20:34:56.583 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==> Parameters: testusername(String), testpassword(String)
+2019-03-23 20:34:56.605 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-<==      Total: 1
+2019-03-23 20:38:24.548 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=? last_edit_time=? WHERE user_id=? AND username=? AND password=? 
+2019-03-23 20:38:56.381 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=? last_edit_time=? WHERE user_id=? AND username=? AND password=? 
+2019-03-23 20:39:48.904 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=? last_edit_time=? WHERE user_id=? AND username=? AND password=? 
+2019-03-23 20:39:48.985 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: testNewPassword(String), 2019-03-23 20:39:48.441(Timestamp), 1(Long), testusername(String), testpassword(String)
+2019-03-23 20:43:42.892 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
+2019-03-23 20:43:42.963 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: testNewPassword(String), 2019-03-23 20:43:42.46(Timestamp), 1(Long), testusername(String), testpassword(String)
+2019-03-23 20:43:42.973 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 1
