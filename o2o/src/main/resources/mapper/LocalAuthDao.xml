@@ -39,7 +39,7 @@
 		l.password = #{password}
     </select>
 
-    <select id=" queryLocalByUserId" resultMap="localAuthResultMap">
+    <select id="queryLocalByUserId" resultMap="localAuthResultMap">
         SELECT
 		l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time,
 		p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time,

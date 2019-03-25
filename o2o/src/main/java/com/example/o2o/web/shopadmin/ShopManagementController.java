@@ -95,7 +95,7 @@ public class ShopManagementController {
         Map<String, Object> modelMap = new HashMap<>();
         PersonInfo user = new PersonInfo();
         user.setUserId(1L);
-        user.setName("test");
+        user.setName("Ashe");
         request.getSession().setAttribute("user", user);
         user = (PersonInfo) request.getSession().getAttribute("user");
         try {
