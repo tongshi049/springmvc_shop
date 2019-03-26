@@ -93,16 +93,19 @@ public class ShopManagementController {
     @ResponseBody
     private Map<String, Object> getShopList(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        PersonInfo user = new PersonInfo();
-        user.setUserId(1L);
-        user.setName("Ashe");
-        request.getSession().setAttribute("user", user);
-        user = (PersonInfo) request.getSession().getAttribute("user");
+        //PersonInfo user = new PersonInfo();
+        //user.setUserId(1L);
+        //user.setName("Ashe");
+        //request.getSession().setAttribute("user", user);
+        PersonInfo user = (PersonInfo) request.getSession().getAttribute("user");
         try {
             Shop shopCondition = new Shop();
             shopCondition.setOwner(user);
             ShopExecution se = shopService.getShopList(shopCondition, 0, 100);
             modelMap.put("shopList", se.getShopList());
+            //put shop in the session to prepare the right identification,
+            // let the account can only operate its owen shops
+            request.getSession().setAttribute("shopList", se.getShopList());
             modelMap.put("user", user);
             modelMap.put("success", true);
         } catch (Exception e) {
@@ -253,6 +256,7 @@ public class ShopManagementController {
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     modelMap.put("success", true);
                     // list consisting of shops that current user can operate
+                    @SuppressWarnings("unchecked")
                     List<Shop> shopList = (List<Shop>) request.getSession().getAttribute("shopList");
                     if (shopList == null || shopList.size() == 0) {
                         shopList = new ArrayList<>();

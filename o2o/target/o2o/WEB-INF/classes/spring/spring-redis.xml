@@ -29,7 +29,7 @@
         <constructor-arg index="2" value="${redis.port}" type="int" />
     </bean>
 
-    <!-- 创建Redis工具类，封装好Redis的连接以进行相关的操作 -->
+   <!-- 创建Redis工具类，封装好Redis的连接以进行相关的操作 -->
     <bean id="jedisUtil" class="com.example.o2o.cache.JedisUtil" scope="singleton">
         <property name="jedisPool">
             <ref bean="jedisWritePool" />

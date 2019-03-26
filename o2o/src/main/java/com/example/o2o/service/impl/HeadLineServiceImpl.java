@@ -26,6 +26,7 @@ public class HeadLineServiceImpl implements HeadLineService {
 
     @Autowired
     private JedisUtil.Keys jedisKeys;
+
     @Autowired
     private JedisUtil.Strings jedisStrings;
 

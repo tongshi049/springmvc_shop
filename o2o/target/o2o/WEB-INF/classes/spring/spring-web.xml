@@ -36,6 +36,31 @@
 	<!-- 4.扫描web相关的bean -->
 	<context:component-scan base-package="com.example.o2o.web" />
 	<!-- 5.权限拦截器 -->
+	<mvc:interceptors>
+		<!--check if client logged in shop management system-->
+		<mvc:interceptor>
+			<mvc:mapping path="/shopadmin/**"/>
+			<bean id="Shopinterceptor"
+				  class="com.example.o2o.interceptor.shopadmin.ShopLoginInterceptor"/>
+		</mvc:interceptor>
+		<!--check if the client has the leverage to do shop management-->
+		<mvc:interceptor>
+			<mvc:mapping path="/shopadmin/**"/>
+			<!--shoplist page-->
+			<mvc:exclude-mapping path="/shopadmin/shoplist"/>
+			<mvc:exclude-mapping path="/shopadmin/getshoplist"/>
+			<!--shopregister page-->
+			<mvc:exclude-mapping path="/shopadmin/getshopinitinfo"/>
+			<mvc:exclude-mapping path="/shopadmin/registershop"/>
+			<mvc:exclude-mapping path="/shopadmin/shopoperation"/>
+			<!--shopmanage page-->
+			<mvc:exclude-mapping path="/shopadmin/shopmanagement"/>
+			<mvc:exclude-mapping path="/shopadmin/getshopmanagementinfo"/>
+			<bean id="ShopPermissionInterceptor"
+				  class="com.example.o2o.interceptor.shopadmin.ShopPermissionInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 
 	<!--<bean id="uploadDirResource" class="org.springframework.core.io.FileSystemResource">
 		<constructor-arg>
