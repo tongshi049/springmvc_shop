@@ -1,51 +1,20 @@
-2019-03-24 10:48:10.756 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
-2019-03-24 10:48:10.820 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: 6559sq606y6l92e9ss5qsqb5q92e566b(String), 2019-03-24 10:48:10.703(Timestamp), 1(Long), testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String)
-2019-03-24 10:48:10.823 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 0
-2019-03-24 10:50:41.196 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 10:50:41.221 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 10:50:41.237 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 2
-2019-03-24 10:50:41.274 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
-2019-03-24 10:50:41.275 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: 6559sq606y6l92e9ss5qsqb5q92e566b(String), 2019-03-24 10:50:41.252(Timestamp), 1(Long), testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String)
-2019-03-24 10:50:41.276 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 0
-2019-03-24 10:54:13.792 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 10:54:13.832 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 10:54:13.851 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 1
-2019-03-24 10:54:13.893 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
-2019-03-24 10:54:13.894 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: 6559sq606y6l92e9ss5qsqb5q92e566b(String), 2019-03-24 10:54:13.868(Timestamp), 1(Long), testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String)
-2019-03-24 10:54:13.895 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 0
-2019-03-24 10:57:22.648 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 10:57:22.687 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 10:57:22.703 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 0
-2019-03-24 10:57:22.710 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==>  Preparing: INSERT INTO tb_local_auth(username,password,user_id,create_time,last_edit_time) VALUES (?,?,?,?,?) 
-2019-03-24 10:57:22.717 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==> Parameters: testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String), 1(Long), 2019-03-24 10:57:22.709(Timestamp), 2019-03-24 10:57:22.709(Timestamp)
-2019-03-24 10:57:22.864 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
-2019-03-24 10:57:22.865 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: 6559sq606y6l92e9ss5qsqb5q92e566b(String), 2019-03-24 10:57:22.823(Timestamp), 1(Long), testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String)
-2019-03-24 10:57:22.872 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 0
-2019-03-24 10:58:52.451 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 10:58:52.485 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 10:58:52.498 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 0
-2019-03-24 10:58:52.503 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==>  Preparing: INSERT INTO tb_local_auth(username,password,user_id,create_time,last_edit_time) VALUES (?,?,?,?,?) 
-2019-03-24 10:58:52.507 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==> Parameters: testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String), 1(Long), 2019-03-24 10:58:52.502(Timestamp), 2019-03-24 10:58:52.502(Timestamp)
-2019-03-24 11:02:57.829 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
-2019-03-24 11:02:57.852 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: 6559sq606y6l92e9ss5qsqb5q92e566b(String), 2019-03-24 11:02:57.743(Timestamp), 1(Long), testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String)
-2019-03-24 11:02:57.854 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 0
-2019-03-24 11:09:52.270 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 11:09:52.298 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 11:09:52.313 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 0
-2019-03-24 11:09:52.319 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==>  Preparing: INSERT INTO tb_local_auth(username,password,user_id,create_time,last_edit_time) VALUES (?,?,?,?,?) 
-2019-03-24 11:09:52.323 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==> Parameters: testusername(String), s06l5bl5s05602ly2syls6556q56sb6e(String), 1(Long), 2019-03-24 11:09:52.318(Timestamp), 2019-03-24 11:09:52.318(Timestamp)
-2019-03-24 11:10:31.361 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 11:10:31.387 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 11:10:31.399 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 0
-2019-03-24 11:10:31.404 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==>  Preparing: INSERT INTO tb_local_auth(username,password,user_id,create_time,last_edit_time) VALUES (?,?,?,?,?) 
-2019-03-24 11:10:31.408 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-==> Parameters: testusername666(String), s06l5bl5s05602ly2syls6556q56sb6e(String), 1(Long), 2019-03-24 11:10:31.403(Timestamp), 2019-03-24 11:10:31.403(Timestamp)
-2019-03-24 11:10:31.412 [main] DEBUG com.example.o2o.dao.LocalAuthDao.insertLocalAuth-<==    Updates: 1
-2019-03-24 11:10:31.427 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.user_id = ? 
-2019-03-24 11:10:31.428 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-==> Parameters: 1(Long)
-2019-03-24 11:10:31.434 [main] DEBUG c.example.o2o.dao.LocalAuthDao.queryLocalByUserId-<==      Total: 1
-2019-03-24 11:11:29.863 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==>  Preparing: UPDATE tb_local_auth SET password=?, last_edit_time=? WHERE user_id=? AND username=? AND password=? 
-2019-03-24 11:11:29.887 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-==> Parameters: 6559sq606y6l92e9ss5qsqb5q92e566b(String), 2019-03-24 11:11:29.768(Timestamp), 1(Long), testusername666(String), s06l5bl5s05602ly2syls6556q56sb6e(String)
-2019-03-24 11:11:29.890 [main] DEBUG com.example.o2o.dao.LocalAuthDao.updateLocalAuth-<==    Updates: 1
-2019-03-24 11:11:29.908 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==>  Preparing: SELECT l.local_auth_id,l.username,l.password,l.create_time,l.last_edit_time, p.user_id,p.name,p.gender,p.email,p.profile_img,p.user_type,p.create_time, p.last_edit_time,p.enable_status FROM tb_local_auth AS l LEFT JOIN tb_person_info AS p ON l.user_id = p.user_id WHERE l.username = ? AND l.password = ? 
-2019-03-24 11:11:29.908 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-==> Parameters: testusername666(String), 6559sq606y6l92e9ss5qsqb5q92e566b(String)
-2019-03-24 11:11:29.929 [main] DEBUG c.e.o.dao.LocalAuthDao.queryLocalByUserNameAndPwd-<==      Total: 1
+2019-07-25 10:11:05.305 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:11:05.376 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:11:05.432 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:11:06.227 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:11:06.307 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-07-25 10:13:57.684 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:13:57.695 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:13:57.808 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:13:58.856 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:13:59.105 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-07-25 10:40:03.491 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:40:03.494 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:40:03.509 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:40:04.228 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:40:04.304 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-07-25 10:40:54.499 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:40:54.503 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:40:54.522 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:40:55.325 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:40:55.424 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2

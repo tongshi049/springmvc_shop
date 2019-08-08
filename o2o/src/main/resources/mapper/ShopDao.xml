@@ -18,7 +18,7 @@
 
     <update id="updateShop" parameterType="com.example.o2o.entity.Shop">
         update tb_shop
-        <set>/*avoid ussing SET, using <!--<set>-->  will eclipse the mistake that none of if statements match*/
+        <set>/*avoid using SET, using <!--<set>-->  will eclipse the mistake that none of if statements match*/
             <if test="shopName != null">shop_name=#{shopName},</if>
             <if test="shopDesc != null">shop_desc=#{shopDesc},</if>
             <if test="shopAddr != null">shop_addr=#{shopAddr},</if>
@@ -59,6 +59,7 @@
             <result column="name" property="name"/>
         </association>
     </resultMap>
+
     <select id="queryShopList" resultMap="shopMap">
         SELECT
         s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img,

@@ -5,7 +5,12 @@ import com.sun.org.apache.xpath.internal.operations.Bool;
 import javax.servlet.http.HttpServletRequest;
 
 public class HttpServletRequestUtil {
-
+    /**
+     * Parse Int value.
+     * @param request
+     * @param key
+     * @return
+     */
     public static int getInt(HttpServletRequest request, String key) {
         try {
             return Integer.decode(request.getParameter(key));
@@ -14,6 +19,12 @@ public class HttpServletRequestUtil {
         }
     }
 
+    /**
+     * Parse Long Value
+     * @param request
+     * @param key
+     * @return
+     */
     public static long getLong(HttpServletRequest request, String key) {
         try {
             return Long.valueOf(request.getParameter(key));
@@ -22,6 +33,12 @@ public class HttpServletRequestUtil {
         }
     }
 
+    /**
+     * Request get Double
+     * @param request
+     * @param key
+     * @return
+     */
     public static Double getDouble(HttpServletRequest request, String key) {
         try {
             return Double.valueOf(request.getParameter(key));
@@ -38,6 +55,12 @@ public class HttpServletRequestUtil {
         }
     }
 
+    /**
+     * Parse String.
+     * @param request
+     * @param key
+     * @return
+     */
     public  static String getString(HttpServletRequest request, String key) {
         try {
             String result = request.getParameter(key);

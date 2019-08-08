@@ -82,7 +82,7 @@ public class ProductServiceImpl implements ProductService {
         String dest = PathUtil.getShopImagePath(product.getShop().getShopId());
         List<ProductImg> productImgList = new ArrayList<>();
         for (ImageHolder imageHolder: productImgHolderList) {
-            String imgAddr = ImageUtil.generateThumbnail(imageHolder, dest);
+            String imgAddr = ImageUtil.generateNormalImg(imageHolder, dest);
             ProductImg productImg = new ProductImg();
             productImg.setImgAddr(imgAddr);
             productImg.setProductId(product.getProductId());
@@ -94,9 +94,9 @@ public class ProductServiceImpl implements ProductService {
             try {
                 int effectedNum = productImgDao.batchInsertProductImg(productImgList);
                 if (effectedNum <= 0)
-                    throw new ProductOperationException("create thumbnail failed!");
+                    throw new ProductOperationException("create product images failed!");
             } catch (Exception e) {
-                throw new ProductOperationException("create thumbnail failed!" + e.toString());
+                throw new ProductOperationException("create product images failed!" + e.toString());
             }
         }
     }

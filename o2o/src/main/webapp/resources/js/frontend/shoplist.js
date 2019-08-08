@@ -47,7 +47,7 @@ $(function() {
                             });
                         // 将拼接好的类别标签嵌入前台的html组件里
                         $('#shoplist-search-div').html(html);
-                        var selectOptions = '<option value="">全部街道</option>';
+                        var selectOptions = '<option value="">All</option>';
                         // 获取后台返回过来的区域信息列表
                         var areaList = data.areaList;
                         // 遍历区域信息列表，拼接出option标签集
@@ -83,24 +83,27 @@ $(function() {
                 maxItems = data.count;
                 var html = '';
                 // 遍历店铺列表，拼接出卡片集合
-                data.shopList.map(function(item, index) {
-                    html += '' + '<div class="card" data-shop-id="'
-                        + item.shopId + '">' + '<div class="card-header">'
-                        + item.shopName + '</div>'
-                        + '<div class="card-content">'
-                        + '<div class="list-block media-list">' + '<ul>'
-                        + '<li class="item-content">'
-                        + '<div class="item-media">' + '<img src="'
-                        + item.shopImg + '" width="44">' + '</div>'
-                        + '<div class="item-inner">'
-                        + '<div class="item-subtitle">' + item.shopDesc
-                        + '</div>' + '</div>' + '</li>' + '</ul>'
-                        + '</div>' + '</div>' + '<div class="card-footer">'
-                        + '<p class="color-gray">'
-                        + new Date(item.lastEditTime).Format("yyyy-MM-dd")
-                        + '更新</p>' + '<span>点击查看</span>' + '</div>'
-                        + '</div>';
-                });
+                if (data.shopList != null) {
+                    data.shopList.map(function(item, index) {
+                        html += '' + '<div class="card" data-shop-id="'
+                            + item.shopId + '">' + '<div class="card-header">'
+                            + item.shopName + '</div>'
+                            + '<div class="card-content">'
+                            + '<div class="list-block media-list">' + '<ul>'
+                            + '<li class="item-content">'
+                            + '<div class="item-media">' + '<img src="'
+                            + item.shopImg + '" width="44">' + '</div>'
+                            + '<div class="item-inner">'
+                            + '<div class="item-subtitle">' + item.shopDesc
+                            + '</div>' + '</div>' + '</li>' + '</ul>'
+                            + '</div>' + '</div>' + '<div class="card-footer">'
+                            + '<p class="color-gray">'
+                            + new Date(item.lastEditTime).Format("yyyy-MM-dd")
+                            + '更新</p>' + '<span>点击查看</span>' + '</div>'
+                            + '</div>';
+                    });
+
+                }
                 // 将卡片集合添加到目标HTML组件里
                 $('.list-div').append(html);
                 // 获取目前为止已显示的卡片总数，包含之前已经加载的
@@ -118,6 +121,7 @@ $(function() {
                 loading = false;
                 // 刷新页面，显示新加载的店铺
                 $.refreshScroller();
+
             }
         });
     }

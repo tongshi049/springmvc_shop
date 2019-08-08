@@ -28,8 +28,8 @@ public class ShopServiceImpl implements ShopService {
 
     @Override
     public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
-        int rewIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
-        List<Shop> shopList = shopDao.queryShopList(shopCondition, rewIndex, pageSize);
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex, pageSize);
+        List<Shop> shopList = shopDao.queryShopList(shopCondition, rowIndex, pageSize);
         int count = shopDao.queryShopCount(shopCondition);
         ShopExecution se = new ShopExecution();
         if (!shopList.isEmpty()){
@@ -55,19 +55,21 @@ public class ShopServiceImpl implements ShopService {
             shop.setEnableStatus(0);
             shop.setCreateTime(new Date());
             shop.setLastEditTime(new Date());
-            // add shop info
+            // 1. add shop info
             int effectedNum = shopDao.insertShop(shop);
             if (effectedNum <= 0) {  // failed operation
                 throw new ShopOperationException("shop creation fails");  // diff with Exception
             } else {
                 if (thumbnail.getImage() != null) {
-                    // save Img
+                    // 2. save Img
                     try {
                         addShopImg(shop, thumbnail);
                     }catch (Exception e) {
+                        // shop operation exception extends from Runtime exception.
+                        // only runtime exception can let transaction roll back.
                         throw new ShopOperationException("addShopImg error" + e.getMessage());
                     }
-                    // update img addr of shop
+                    //3. update img addr of shop
                     effectedNum = shopDao.updateShop(shop);
                     if (effectedNum <= 0) {  // failed operation
                         throw new ShopOperationException("update shop img fails");  // diff with Exception

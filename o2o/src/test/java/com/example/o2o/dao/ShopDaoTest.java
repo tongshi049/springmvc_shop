@@ -56,7 +56,7 @@ public class ShopDaoTest extends BaseTest {
     @Ignore
     public void testUpdateShop() {
         Shop shop = new Shop();
-        shop.setShopId(1L);
+        shop.setShopId(44L);
         PersonInfo owner = new PersonInfo();
         Area area = new Area();
         ShopCategory shopCategory = new ShopCategory();
@@ -70,7 +70,7 @@ public class ShopDaoTest extends BaseTest {
     }
 
     @Test
-    @Ignore
+
     public void testInsertShop() {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -78,11 +78,11 @@ public class ShopDaoTest extends BaseTest {
         ShopCategory shopCategory = new ShopCategory();
         owner.setUserId((1L));
         area.setAreaId(2);
-        shopCategory.setShopCategoryId(1L);
+        shopCategory.setShopCategoryId(33L);
         shop.setOwner(owner);
         shop.setArea(area);
         shop.setShopCategory(shopCategory);
-        shop.setShopName("tested shop");
+        shop.setShopName("tested shop master/slave");
         shop.setShopDesc("test");
         shop.setShopAddr("test");
         shop.setPhone("test");

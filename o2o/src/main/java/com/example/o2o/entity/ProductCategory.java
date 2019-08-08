@@ -9,9 +9,10 @@ import java.util.Date;
  *
  */
 public class ProductCategory {
-	// 主键ID
+	// 主键ID primary key ID
 	private Long productCategoryId;
 	// 该类别是属于哪个店铺的
+	// why we use shopId not shop here, since we only need id info in shop entity.
 	private Long shopId;
 	// 类别名
 	private String productCategoryName;

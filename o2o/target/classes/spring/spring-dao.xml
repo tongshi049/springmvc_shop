@@ -20,13 +20,10 @@
 		<property name="fileEncoding" value="UTF-8" />
 	</bean>
 	<!-- 2.数据库连接池 -->
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<!--connection pool attrs-->
-		<property name="driverClass" value="${jdbc.driver}"/>
-		<property name="jdbcUrl" value="${jdbc.url}"/>
-		<property name="user" value="${jdbc.username}"/>
-		<property name="password" value="${jdbc.password}"/>
-
+	<bean id="abstractDataSource"
+		  abstract = "true"
+		  class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		  destroy-method="close">
 		<!-- c3p0连接池的私有属性 -->
 		<property name="maxPoolSize" value="30" />
 		<property name="minPoolSize" value="10" />
@@ -36,6 +33,41 @@
 		<property name="checkoutTimeout" value="10000" />
 		<!-- 当获取连接失败重试次数 -->
 		<property name="acquireRetryAttempts" value="2" />
+	</bean>
+
+	<!--Master /Slave DataSource-->
+	<bean id="master" parent="abstractDataSource">
+		<!--connection pool attrs-->
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.master.url}"/>
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+
+	<bean id="slave" parent="abstractDataSource">
+		<!--connection pool attrs-->
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.slave.url}"/>
+		<property name="user" value="${jdbc.username}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+
+	<!--Configure Dynarmic Data Routing Data Source -->
+	<bean id ="dynamicDataSource" class= "com.example.o2o.dao.split.DynamicDataSource">
+		<!-- Map<Object, Object> targetDataSources; -->
+		<property name="targetDataSources">
+			<map>
+				<entry value-ref="master" key="master"></entry>
+				<entry value-ref="slave" key="slave"></entry>
+			</map>
+		</property>
+	</bean>
+
+	<!--Evaluate DataSource when it is needed at runtime, lazy connection/evaluation-->
+	<bean id ="dataSource" class ="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+		<property name="targetDataSource">
+			<ref bean="dynamicDataSource"></ref>
+		</property>
 	</bean>
 
 	<!-- 3.配置SqlSessionFactory对象 -->

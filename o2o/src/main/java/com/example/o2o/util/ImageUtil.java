@@ -19,14 +19,15 @@ import java.util.Random;
 
 public class ImageUtil {
 
-    private static String basePath = "C:\\Users\\tshi3\\Documents\\GitHub\\springmvc_shop\\o2o\\src\\main\\resources";
+    //private static String basePath = "C:\\Users\\tshi3\\Documents\\GitHub\\springmvc_shop\\o2o\\src\\main\\resources";
+    private static String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
     private static final SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
     private static final Random r = new Random();
     private static Logger logger = LoggerFactory.getLogger(ImageUtil.class);
 
     /**
      * cFile --> File
-     *
+     * Transfer commonsMultipartFile to file
      * @param cFile
      * @return
      */
@@ -68,19 +69,19 @@ public class ImageUtil {
     }
 
     public static String generateNormalImg(ImageHolder thumbnail, String targetAddr) {
-        // 获取不重复的随机名
+        // 1. get random file name
         String realFileName = getRandomFileName();
-        // 获取文件的扩展名如png,jpg等
+        // 2. get extensions such as .png, .jpg
         String extension = getFileExtension(thumbnail.getImageName());
-        // 如果目标路径不存在，则自动创建
+        // 3. create directories if not exists
         makeDirPath(targetAddr);
-        // 获取文件存储的相对路径(带文件名)
+        // 4. get relative addr( with file extension)
         String relativeAddr = targetAddr + realFileName + extension;
         logger.debug("current relativeAddr is :" + relativeAddr);
-        // 获取文件要保存到的目标路径
+        // 5. get the absolute destination
         File dest = new File(PathUtil.getImgBasePath() + relativeAddr);
         logger.debug("current complete addr is :" + PathUtil.getImgBasePath() + relativeAddr);
-        // 调用Thumbnails生成带有水印的图片
+        // 6. use Thumbnails to generate
         try {
             Thumbnails.of(thumbnail.getImage()).size(337, 640)
                     .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File(basePath + "\\watermark.jpg")), 0.25f)
@@ -89,12 +90,12 @@ public class ImageUtil {
             logger.error(e.toString());
             throw new RuntimeException("创建缩图片失败：" + e.toString());
         }
-        // 返回图片相对路径地址
+        // 7. return relative image address
         return relativeAddr;
     }
 
     /**
-     * created files that involving in the target dir
+     * created file folders that involving in the target dir
      *
      * @param targetAddr
      */
@@ -123,7 +124,7 @@ public class ImageUtil {
      */
     public static String getRandomFileName() {
         // get random 5 digits
-        int rannum = r.nextInt(89999) + 10000;
+        int rannum = r.nextInt(89999) + 10000;//[10000,99999]
         String nowTimeStr = sDateFormat.format(new Date());
         return nowTimeStr + rannum;
     }
@@ -131,18 +132,18 @@ public class ImageUtil {
     public static void main(String[] args) throws IOException {
         //String basePath = Thread.currentThread().getContextClassLoader().getResource("").getPath();
         //System.out.println(basePath);
-        Thumbnails.of(new File("C:\\codes\\img\\namei.jpg"))
+        Thumbnails.of(new File("C:\\codes\\img\\olivier.jpg"))
                 .size(200, 200).watermark(Positions.BOTTOM_RIGHT,
-                ImageIO.read(new File("C:\\Users\\tshi3\\Desktop\\o2o\\src\\main\\resources\\watermark.jpg")), 0.25f).outputQuality(0.8f)
-                .toFile("C:\\codes\\img\\nameinew.jpg");
+                ImageIO.read(new File(basePath + "watermark.jpg")), 0.25f)
+                .outputQuality(0.8f)
+                .toFile("C:\\codes\\img\\oliver_new.jpg");
 
     }
 
     /**
      * 1. idenfity the path is a file path or a directory path,
      * if it's a file path delete file;
-     * else delete the file under that directory.
-     *
+     * else delete all files under that directory.
      * @param storePath
      */
     public static void deleteFileOrPath(String storePath) {

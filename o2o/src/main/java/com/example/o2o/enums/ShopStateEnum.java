@@ -15,7 +15,8 @@ public enum ShopStateEnum {
     }
 
     /**
-     * return stateEnum
+     * return stateEnum given state code.
+     * if state code does not exist, return null.
      */
     public static ShopStateEnum stateOf(int state) {
         for (ShopStateEnum stateEnum: values()) {

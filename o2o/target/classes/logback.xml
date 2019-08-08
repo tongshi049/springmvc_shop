@@ -5,7 +5,7 @@
     <property name="log.level" value="debug"/>
     <property name="log.maxHistory" value="30"/>
     <property name="log.filePath" value="${catalina.base}/logs/webapps"/>
-    <property name="log.pattern" value="%d{yyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg%n"/>
+    <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50}-%msg%n"/>
     <!--Console set-->
     <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
@@ -51,7 +51,7 @@
         </filter>
     </appender>
     <!--Error-->
-    <appender name="infoAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <appender name="errorAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!--file path-->
         <file>${log.filePath}/error.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">

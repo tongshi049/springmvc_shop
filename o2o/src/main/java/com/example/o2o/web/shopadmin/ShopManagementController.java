@@ -169,7 +169,11 @@ public class ShopManagementController {
         }
     }
 
-
+    /**
+     * Get shop infor by shop Id
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/getshopbyid", method = RequestMethod.GET)
     @ResponseBody
     private Map<String, Object> getShopById(HttpServletRequest request) {
@@ -214,16 +218,23 @@ public class ShopManagementController {
         return modelMap;
     }
 
+    /**
+     *
+     * @param request
+     * @return
+     */
     @RequestMapping(value = "/registershop", method = RequestMethod.POST)
     @ResponseBody
     private Map<String, Object> registerShop(HttpServletRequest request) {
+
         Map<String, Object> modelMap = new HashMap<>();
         if (!CodeUtil.checkVerifyCode(request)) {
             modelMap.put("success", false);
             modelMap.put("errMsg", "wrong verify code");
             return modelMap;
         }
-        // 1. receive and process parameters, including shop info and img info
+        // 1. receive and process parameters, including shop info and img info,
+        // parse the JSON String to Shop object.
         String shopStr = HttpServletRequestUtil.getString(request, "shopStr"); //f-e
         ObjectMapper mapper = new ObjectMapper();
         Shop shop = null;
@@ -234,6 +245,7 @@ public class ShopManagementController {
             modelMap.put("errMsg", e.getMessage());
             return modelMap;
         }
+        //Spring CommonsMultipartFile
         CommonsMultipartFile shopImg = null;
         CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver(
                 request.getSession().getServletContext());
@@ -247,6 +259,7 @@ public class ShopManagementController {
         }
         // 2. register shop
         if (shop != null && shopImg != null) {
+            //Get Owner Information from the Session.
             PersonInfo owner = (PersonInfo) request.getSession().getAttribute("user");
             shop.setOwner(owner);
             ShopExecution se = null;
@@ -279,6 +292,11 @@ public class ShopManagementController {
         return modelMap;
     }
 
+    /**
+     * Change the CommonMultipartFile Change to File.
+     * @param ins
+     * @param file
+     */
     /*private static void inputStreamToFile(InputStream ins, File file) {
         FileOutputStream os = null;
         try {
@@ -289,8 +307,9 @@ public class ShopManagementController {
                 os.write(buffer, 0, byteRead);
             }
         } catch (Exception e) {
-            throw new RuntimeException("call inputStreamToFile Exception" + e.getMessage());
+            throw new RuntimeException("Invoke InputStreamToFile Exception" + e.getMessage());
         } finally {
+            // Close outputFileStream ,inputFileStream.
             try {
                 if (os != null)
                     os.close();

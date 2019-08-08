@@ -1,0 +1,20 @@
+2019-07-25 10:11:05.305 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:11:05.376 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:11:05.432 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:11:06.227 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:11:06.307 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-07-25 10:13:57.684 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:13:57.695 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:13:57.808 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:13:58.856 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:13:59.105 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-07-25 10:40:03.491 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:40:03.494 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:40:03.509 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:40:04.228 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:40:04.304 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2
+2019-07-25 10:40:54.499 [main] DEBUG c.e.o2o.dao.split.DynamicDataSourceInterceptor-Setting Method[com.example.o2o.dao.AreaDao.queryArea] use[slave] Stratege, SqlCommandType [SELECT]..
+2019-07-25 10:40:54.503 [main] DEBUG com.example.o2o.dao.split.DynamicDataSourceHolder-Using Data Source:slave
+2019-07-25 10:40:54.522 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==>  Preparing: SELECT area_id, area_name, priority, create_time, last_edit_time FROM tb_area ORDER BY priority DESC 
+2019-07-25 10:40:55.325 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-==> Parameters: 
+2019-07-25 10:40:55.424 [main] DEBUG com.example.o2o.dao.AreaDao.queryArea-<==      Total: 2

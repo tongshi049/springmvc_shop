@@ -10,16 +10,16 @@ public class ShopExecution {
     // result state
     private int state;
 
-    // state info
+    // state info (description of state)
     private String stateInfo;
 
     // shop numbers
     private int count;
 
-    // Shop obj (which is used when doing Create, Update, Delete
+    // Shop obj (which is used when doing Create, Update, Delete)
     private Shop shop;
 
-    // shop list (used when doing Select
+    // shop list (used when doing Select)
     private List<Shop> shopList;
 
     public ShopExecution() {}

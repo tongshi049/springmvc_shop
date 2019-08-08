@@ -1,5 +1,6 @@
 /**
- *
+ * 1. init  rendering the shop info on the page.
+ * 2. submit the form and call  register shop controller
  */
 $(function() {
     var shopId = getQueryString('shopId');
@@ -38,6 +39,7 @@ $(function() {
             }
         });
     }
+
     function getShopInitInfo() {
         $.getJSON(initUrl, function (data) {
             if (data.success) {

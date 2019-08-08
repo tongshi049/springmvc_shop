@@ -55,7 +55,7 @@ public class ShopServiceTest extends BaseTest {
     }
 
     @Test
-    @Ignore
+
     public void testAddShop() throws FileNotFoundException {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -63,7 +63,7 @@ public class ShopServiceTest extends BaseTest {
         ShopCategory shopCategory = new ShopCategory();
         owner.setUserId((1L));
         area.setAreaId(2);
-        shopCategory.setShopCategoryId(1L);
+        shopCategory.setShopCategoryId(33L);
         shop.setOwner(owner);
         shop.setArea(area);
         shop.setShopCategory(shopCategory);
