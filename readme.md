@@ -34,25 +34,25 @@ If you are also interested in **SSM** technology stack like me, just don't miss 
 
 *Index* page:
 <div>
-  <img src="./images/index-p.png" alt="index page" width="70%" height="70%">
+  <img src="./images/index-p.png" alt="index page" width="50%" height="50%">
 </div>
 <br> 
 
 *Shop List* page:
 <div>
-  <img src="./images/shoplist-f-p.png" alt="frontend shop list page" width="70%" height="70%">
+  <img src="./images/shoplist-f-p.png" alt="frontend shop list page" width="50%" height="50%">
 </div>
 <br> 
 
 *Shop Detail* page:
 <div>
-  <img src="./images/shopdetail-f-p.png" alt="frontend shop detail page" width="70%" height="70%">
+  <img src="./images/shopdetail-f-p.png" alt="frontend shop detail page" width="50%" height="50%">
 </div>
 <br> 
 
 *Product Detail* page:
 <div>
-  <img src="./images/product-p.png" alt="frontend product detal page" width="70%" height="70%">
+  <img src="./images/product-p.png" alt="frontend product detal page" width="50%" height="50%">
 </div>
 <br> 
 
@@ -60,19 +60,19 @@ If you are also interested in **SSM** technology stack like me, just don't miss 
 
 *Create Account* page:
 <div>
-  <img src="./images/auth-create-p.png" alt="backend autherization create account page" width="70%" height="70%">
+  <img src="./images/auth-create-p.png" alt="backend autherization create account page" width="50%" height="50%">
 </div>
 <br>
 
 *Login* page:
 <div>
-  <img src="./images/auth-p.png" alt="backend autherization login page" width="70%" height="70%">
+  <img src="./images/auth-p.png" alt="backend autherization login page" width="50%" height="50%">
 </div>
 <br> 
 
 *Change Password* page:
 <div>
-  <img src="./images/auth-changepwd-p.png" alt="backend autherization change password page" width="70%" height="70%">
+  <img src="./images/auth-changepwd-p.png" alt="backend autherization change password page" width="50%" height="50%">
 </div>
 <br> 
 
@@ -80,37 +80,37 @@ If you are also interested in **SSM** technology stack like me, just don't miss 
 
 *Shop List* page:
 <div>
-  <img src="./images/shoplist-b-p.png" alt="backend shop list page" width="70%" height="70%">
+  <img src="./images/shoplist-b-p.png" alt="backend shop list page" width="50%" height="50%">
 </div>
 <br> 
 
 *Shop Management* page:
 <div>
-  <img src="./images/shop-m-p.png" alt="backend shop management page" width="70%" height="70%">
+  <img src="./images/shop-m-p.png" alt="backend shop management page" width="50%" height="50%">
 </div>
 <br> 
 
 *Shop Info* page:
 <div>
-  <img src="./images/shop-info-p.png" alt="backend shop info page" width="70%" height="70%">
+  <img src="./images/shop-info-p.png" alt="backend shop info page" width="50%" height="50%">
 </div>
 <br> 
 
 *Category Management* page:
 <div>
-  <img src="./images/cat-m-p.png" alt="backend shop category management page" width="70%" height="70%">
+  <img src="./images/cat-m-p.png" alt="backend shop category management page" width="50%" height="50%">
 </div>
 <br> 
 
 *Product Management* page:
 <div>
-  <img src="./images/product-m-p.png" alt="backend shop product management page" width="70%" height="70%">
+  <img src="./images/product-m-p.png" alt="backend shop product management page" width="50%" height="50%">
 </div>
 <br> 
 
 *Product Operation* page:
 <div>
-  <img src="./images/product-operation-p.png" alt="backend shop product operation page" width="70%" height="70%">
+  <img src="./images/product-operation-p.png" alt="backend shop product operation page" width="50%" height="50%">
 </div>
 <br> 
 
