@@ -9,16 +9,16 @@ If you are also interested in **SSM** technology stack like me, just don't miss 
 
 ## Overview
 
-1. Use **HTML**, **CSS**, **JavaScript** to build **front-end**.
-2. Use **SUI Mobile** (a mobile UI lib) to design pages of our application.
-3. Use **SpringMVC** to build the back-end service.
-4. Use **MySQL** to create our database and tables, and **MySQL Master-Slave Replication** to improve the performance.
-5. Use **MyBatis** (a persistence framework) instead of JDBC to interact with the database. 
-6. Use **Ajax** to realize the asynchronous communication between frond-end and back-end. 
-7. Use **Logback Classic Module** (ch.qos.logback) for logging.
-8. Use **Thumbnailator** to deal with uploaded images.
-9. Use encryption techniques like **DES** and **MD5**.
-10. Use **Jedis** (a **Redis** java client) to store some less modifed data improving the performance of our application.  
+1. Develops **front-end** using **HTML**, **CSS**, **JavaScript**.
+2. Designs styles of application pages using **SUI Mobile** (a mobile UI lib).
+3. Builds the back-end service using **SpringMVC** technology stack.
+4. Builds database and tables using **MySQL**, and installs **MySQL Master-Slave Replication** to adapt the scenario where more queries than modifications are done by clients.
+5. Installs **MyBatis** (a persistence framework) instead of JDBC to interact with the database. 
+6. Utilizes **Ajax** to realize the asynchronous communication between frond-end and back-end. 
+7. Utilizes **Logback Classic Module** (ch.qos.logback) for logging.
+8. Utilizes **Thumbnailator** to deal with uploaded images.
+9. Improves the security by installing encryption techniques like **DES** and **MD5**.
+10. Installs **Jedis** (a **Redis** java client) to store some less modified data to improve the performance of our application.  
 
 #
 
@@ -147,7 +147,7 @@ pom.xml                     information about the project and configuration deta
 
 #
 
-### devDependencies
+### Dependencies
 
 - spring-core, spring-beans, spring-context, spring-jdbc, spring-tx, spring-web, spring-webmvc, spring-test: 4.3.7.RELEASE
 - junit: 4.12
